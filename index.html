@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkySense Weather</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="day">
+
+  <div id="weather-effects"></div>
+
+  <main class="app">
+
+    <!-- Top Greeting -->
+    <header class="top-header">
+      <div class="date" id="dateText"></div>
+      <h1 id="greeting">Good Afternoon</h1>
+    </header>
+
+    <!-- Main Weather Panel -->
+    <section class="weather-panel">
+
+      <!-- Search -->
+      <div class="search-box">
+        <input id="cityInput" type="search" placeholder="Search city..." autocomplete="off"/>
+        <button id="searchBtn">Search</button>
+      </div>
+      <div class="suggestions" id="suggestions"></div>
+
+      <!-- Location + Temp -->
+      <div class="main-info">
+        <h2 id="city">—</h2>
+
+        <div class="temp-row">
+          <span id="temperature">--</span>°
+          <button id="unitToggle">°C</button>
+        </div>
+
+        <p id="condition">—</p>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats">
+        <div>💧 <span id="humidity">--</span>%</div>
+        <div>💨 <span id="wind">--</span> km/h</div>
+        <div>🕒 <span id="localTime">--</span></div>
+        <div>🌍 <span id="gmtTime">--</span></div>
+      </div>
+
+      <!-- Hourly -->
+      <div class="hourly" id="hourly"></div>
+
+      <!-- Weekly -->
+      <div class="weekly" id="weekly"></div>
+
+    </section>
+  </main>
+
+  <audio id="rainSound" loop></audio>
+
+  <script src="js/weather.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

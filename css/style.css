@@ -1,0 +1,248 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #5fa9c9, #cfeee4);
+  color: #0f172a;
+  transition: background 1.5s ease;
+}
+
+/* ================= APP ================= */
+.app {
+  max-width: 420px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ================= HEADER ================= */
+.top-header {
+  margin-bottom: 14px;
+}
+
+.top-header .date {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+#greeting {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* ================= WEATHER PANEL ================= */
+.weather-panel {
+  background: linear-gradient(
+    180deg,
+    rgba(20, 40, 70, 0.85),
+    rgba(10, 25, 45, 0.95)
+  );
+  border-radius: 22px;
+  padding: 18px;
+  color: white;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ================= SEARCH ================= */
+.search-box {
+  display: flex;
+  gap: 10px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 18px;
+  border: none;
+  outline: none;
+}
+
+.search-box button {
+  padding: 10px 18px;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
+/* Suggestions */
+.suggestions {
+  margin-top: 6px;
+  background: white;
+  border-radius: 14px;
+  display: none;
+  overflow: hidden;
+}
+
+.suggestion-item {
+  padding: 10px 14px;
+  cursor: pointer;
+  color: #0f172a;
+}
+
+.suggestion-item:hover {
+  background: rgba(0,0,0,0.08);
+}
+
+/* ================= MAIN INFO ================= */
+.main-info {
+  margin-top: 20px;
+}
+
+.main-info h2 {
+  font-size: 22px;
+  opacity: 0.95;
+}
+
+.temp-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 64px;
+  font-weight: 700;
+}
+
+.temp-row button {
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 14px;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
+#condition {
+  margin-top: 4px;
+  opacity: 0.85;
+}
+
+/* ================= STATS ================= */
+.stats {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* ================= HOURLY ================= */
+.hourly {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+}
+
+.hour {
+  min-width: 70px;
+  background: rgba(255,255,255,0.15);
+  padding: 10px;
+  border-radius: 14px;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* ================= WEEKLY ================= */
+.weekly {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+}
+
+.day-card {
+  min-width: 90px;
+  background: rgba(255,255,255,0.15);
+  padding: 12px;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.day-card .day {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.day-card .icon {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+/* ================= ANIMATIONS ================= */
+#weather-effects {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.rain-drop {
+  position: absolute;
+  top: -20px;
+  width: 2.5px;
+  height: 22px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.9),
+    rgba(180,220,255,0.9)
+  );
+  animation: rainFall 0.8s linear infinite;
+}
+
+@keyframes rainFall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+.snow-flake {
+  position: absolute;
+  top: -10px;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255,255,255,0.8);
+  animation: snowFall 3s linear infinite;
+}
+@keyframes snowFall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+.fog-layer {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 100px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  animation: fogMove 10s linear infinite;
+}
+@keyframes fogMove {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+/* ================= RESPONSIVE ================= */
+@media (max-width: 480px) {
+  .app {
+    padding: 15px;
+  }
+  .temp-row {
+    font-size: 48px;
+  }
+}
